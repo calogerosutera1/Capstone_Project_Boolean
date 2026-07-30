@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 
 # --- Configurazione dei percorsi ASSOLUTI  ---
-DATA_DIR = r"C:\Users\Lillo\Desktop\Capstone_Project_Boolean\data"
+DATA_DIR = os.path.abspath(os.path.join(os.getcwd(), "..", "data"))
 INCIDENTI_OUTPUT = os.path.join(DATA_DIR, "incidenti_raw.csv")
 OUTPUT_FINALE = os.path.join(DATA_DIR, "incidenti_comuni_completo.csv")
 
