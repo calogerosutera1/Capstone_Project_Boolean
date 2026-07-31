@@ -41,6 +41,21 @@ Descrizione di tutte le colonne del dataset finale usato per la dashboard Power 
 | `Popolazione residente` | Popolazione residente per l'anno specifico (usata nei calcoli) |
 | `Anno (Popolazione residente)` | Anno di riferimento della popolazione residente |
 
+
+## Primary key e foreign key
+
+Per arrivare a dataset_kpi_powerbi_v2.csv sono state unite due tabelle di partenza, nessuna delle due con un identificativo a riga singola: lo stesso comune compare più volte, una riga per ogni anno.
+
+Tabella	 | Primary Key
+Incidenti (ISTAT), dopo il filtro DATA_TYPE = ROADACC |	REF_AREA + TIME_PERIOD
+Anagrafica comuni (SITUAS) | Codice Comune (numerico) + TIME_PERIOD
+
+Foreign Key  | Da | Verso
+REF_AREA + TIME_PERIOD | Incidenti | Codice Comune (numerico) + TIME_PERIOD in Anagrafica
+
+La chiave è composta e non solo il codice comune perchè popolazione e superficie cambiano di anno in anno (i file SITUAS sono specifici per anno). Un join fatto solo su REF_AREA = Codice Comune (numerico), senza includere l'anno, avrebbe agganciato ogni riga di incidenti a più righe di anagrafica (una per ogni anno caricato), moltiplicando i dati per errore. Aggiungendo TIME_PERIOD alla chiave, ogni incidente trova esattamente la riga di popolazione/superficie relativa al suo stesso anno.
+
+
 ## Metriche calcolate
 
 | Colonna | Descrizione | Formula |
