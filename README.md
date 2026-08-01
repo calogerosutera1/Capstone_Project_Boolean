@@ -5,8 +5,8 @@ Il progetto analizza la pericolosità stradale nei comuni italiani nel triennio 
 ## Struttura del Progetto
 *   `notebooks/`: notebook Python con tutta la pipeline — fetch dei dati, pulizia, EDA, feature engineering, clustering e regressione.
 *   `data/`: CSV di input/output (ISTAT/SITUAS), il dataset arricchito usato per la dashboard e il grafico dei cluster salvato in `.png`.
-*   `Presentazione_Capstone_Traffic.pptx`: pitch deck di 5 slide.
-*   `Dashboard_Incidenti.pbix`: dashboard Power BI.
+*   `Presentazione_Capstone_Traffic.pptx`: dashboard Power BI.
+*   `Dashboard_Incidenti.pbix`: pitch deck di 5 slide.
 
 ## Tecnologie Utilizzate
 *   **Python** (pandas, scikit-learn, matplotlib, seaborn, requests): fetch dati, pulizia, feature engineering, clustering K-Means e regressione lineare.
